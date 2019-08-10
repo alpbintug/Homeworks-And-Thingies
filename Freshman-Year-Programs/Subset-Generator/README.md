@@ -12,4 +12,4 @@ If we give our elements weight like x=1, y=2, z=4 which is val(n)=2^(n-1) we can
 For val x=1,y=2,z=4
 Subset val: {}=0, {x}=1, {y}=2, {y,x}=3, {z}=4, {z,x}=5, {z,y}= 6, {z,y,x}= 7
 
-We use this method to create our code.
+We use these values to create our code, now you can freely go to the source code and enjoy your "How is this garbage working??" moment.
