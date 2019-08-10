@@ -2,7 +2,7 @@
 #include <math.h>
 #define MAX 10
 
-
+//Please read Readme file before this file, algorithm is explained there
 int main(){
     int numberOfSubsets,j,k,m,q,numberOfElements,c;
     char set[MAX];
