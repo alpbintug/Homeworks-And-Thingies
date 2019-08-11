@@ -4,7 +4,7 @@
 
 //Please read Readme file before this file, algorithm is explained there
 int main(){
-    int numberOfSubsets,j,k,m,q,numberOfElements,c;
+    int numberOfSubsets,j,m,k,q,numberOfElements;
     char set[MAX];
     printf("Enter number of elements in your Set (10 ELEMENTS IS MAXIMUM!)");
     scanf("%d",&numberOfElements);
