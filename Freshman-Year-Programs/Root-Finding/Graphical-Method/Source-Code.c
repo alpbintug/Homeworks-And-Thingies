@@ -12,22 +12,22 @@ int main(){
     float x,dx,h;
     int i,j;
     float a[50];
-    printf("Fonksiyonun derecesi=");
+    printf("Power of your function=");
     scanf("%d",&i);
     for (j=0; j<i+1; j++){
-        printf("%d. dereceden terimin katsayisini giriniz", j);
+        printf("Enter the multiplier of the element with power of %d", j);
         scanf("%f",&a[j]);
     }
-    printf("Fonksiyonunuz: ");
+    printf("Your function: ");
     for (j=0; j<i+1; j++){
     printf("+(%f*x^%d)",a[j],j);
 }
 
-    printf("\nbaslangic degeri giriniz ");
+    printf("\nEnter the starting value ");
     scanf("%f",&x);
-    printf("x'in degisim degerini giriniz ");
+    printf("\nEnter the change amount of X ");
     scanf("%f",&dx);
-    printf("hata miktari giriniz ");
+    printf("\nEnter the maximum amount of error/deviation ");
     scanf("%f",&h);
     while (fabs(fonk(x,i,j,a))>h){
     if (fonk(x,i,j,a)*fonk(x+dx,i,j,a)<0){
@@ -37,6 +37,6 @@ int main(){
     x=x+dx;
 }
 }
-    printf("Fonksiyonun koku=%f\n", x);
+    printf("Root of your function=%f\n", x);
     system("PAUSE");
     }
