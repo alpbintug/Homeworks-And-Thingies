@@ -16,3 +16,8 @@ while(|x(n+1)-x(n)| > ε)
   x(n+1) = x(n) - f(x(n))/f'(x(n))
 
 Where ε is desired error level and f'(x(n)) is first derivative of the given function.
+
+
+For more information about Newton-Raphson method check;
+http://www.wikizero.biz/index.php?q=aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvTmV3dG9uJ3NfbWV0aG9k
+http://www.sosmath.com/calculus/diff/der07/der07.html
