@@ -1,3 +1,5 @@
+# Grahical Method
+
 In this code, we use The Graphical Method to find the root of given function.
 
 
