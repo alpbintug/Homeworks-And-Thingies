@@ -13,22 +13,22 @@ int main(){
     int i,j;
     int k=0;
     float a[50];
-    printf("fonksiyonun derecesini giriniz ");
+    printf("Enter the highest power of your function\n");
     scanf("%d",&i);
     for (j=0; j<i+1; j++){
-        printf("%d. dereceden terimin katsayisini giriniz", j);
+        printf("Enter the multiple of element with power of %d\n", j);
         scanf("%f",&a[j]);
     }
-    printf("Fonksiyonunuz: ");
+    printf("Your function: ");
     for (j=0; j<i+1; j++){
     printf("(%f*x^%d)+",a[j],j);
 }
 
-    printf("\nx degerini giriniz:");
+    printf("\b\nEnter the value of X");
     scanf("%f",&x);
-    printf("degisim miktarini giriniz:");
+    printf("Enter the change amount: ");
     scanf("%f",&dx);
-    printf("Geri Fark Turev almak isterseniz 1, Merkezi fark Turev almak isterseniz 2, Ileri fark turev almak isterseniz 3 yazin. ");
+    printf("For bacward-differentiation enter 1, For central-differentiation enter 2, For forward-differentiation enter 3. ");
     scanf("%d",&k);
 
     if (k==1){
@@ -40,9 +40,11 @@ int main(){
     else if (k==3){
     tur=(fonk(x+dx,i,j,a)-fonk(x,i,j,a))/dx;
 }
+    else
+        printf("Wrong entry");
 
 
-    printf("\nfonksiyonun turevi %f\n", tur);
+    printf("\nDerivative of your function: %f\n", tur);
     system("PAUSE");
     }
 
