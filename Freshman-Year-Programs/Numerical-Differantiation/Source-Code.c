@@ -28,6 +28,11 @@ int main(){
     scanf("%f",&x);
     printf("Enter the change amount: ");
     scanf("%f",&dx);
+    /*
+    Backward-differentiation means you use (f(x)-f(x-h))/h
+    Central-differentiation means you use (f(x+h/2)-f(x-h/2))/h
+    Forward-differentiation means you use (f(x+h)-f(x))/h
+    */
     printf("For bacward-differentiation enter 1, For central-differentiation enter 2, For forward-differentiation enter 3. ");
     scanf("%d",&k);
 
