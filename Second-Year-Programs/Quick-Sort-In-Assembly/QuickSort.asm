@@ -1,10 +1,10 @@
-
+;Most of the variable names are in Turkish, I'll try to explaing each one
 
 data SEGMENT PARA 'veri'
-    dbg db 'Dizinin boyutunu giriniz.',0
-    deg db 'Dizinin elemanlarini giriniz.',0
-    kbc db 'Kod basari ile calistirildi.',0
-    dyb db 'Siralamadan sonra diziniz:',0
+    dbg db 'Dizinin boyutunu giriniz.',0; String means "Enter the size of the array", dbg is the initials of that string
+    deg db 'Dizinin elemanlarini giriniz.',0; String means "Enter the elements of the array", deg is the initials of that string
+    kbc db 'Kod basari ile calistirildi.',0; String means "Code ran without errors", kbc is the initials of that string
+    dyb db 'Siralamadan sonra diziniz:',0; String means "Your string after sorting:"
     dizi db 100 dup(?)
     n db ?       
     CR EQU 13
