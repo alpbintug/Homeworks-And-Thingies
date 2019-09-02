@@ -94,7 +94,7 @@ J3: XOR AX,AX
     NEG AX 
     ADD AX,256 
 
-ND:
+ND: ;We jump here if the number is positive (ND stands for "Not negative" in Turkish)
     CALL PUTN
     INC SI
     CMP SI,CX
@@ -105,10 +105,10 @@ ND:
     MOV AX,OFFSET kbc
     CALL PUT_STR  
     
-    RETF
-ANA ENDP      
+    RETF 
+ANA ENDP; We called Quicksort, printed the sorted array and ended our functional program, rest is used functions.
 
-NEWLINE PROC NEAR
+NEWLINE PROC NEAR; The function which prints a new line
     PUSH AX
     PUSH DX
     MOV DL, 10
@@ -122,13 +122,13 @@ NEWLINE PROC NEAR
     RET
 NEWLINE ENDP
 
-GETC PROC NEAR   ; AL'YE DEGER ALIR
+GETC PROC NEAR   ; AL'YE DEGER ALIR (Gets value into AL register)
     MOV AH,1h
     INT 21H
     RET
 GETC ENDP
 
-PUTC PROC NEAR   ; AL'YI EKRANA YAZAR
+PUTC PROC NEAR   ; AL'YI EKRANA YAZAR (Prints the value of the AL register)
     PUSH AX
     PUSH DX
     MOV DL,AL
@@ -139,7 +139,7 @@ PUTC PROC NEAR   ; AL'YI EKRANA YAZAR
     RET
 PUTC ENDP
 
-GETN PROC NEAR   ; AX'E DEGER ATAR
+GETN PROC NEAR   ; AX'E DEGER ATAR (Puts value to AX register)
     PUSH BX
     PUSH CX
     PUSH DX
@@ -186,7 +186,7 @@ FIN_GETN:
     RET
 GETN ENDP
 
-PUT_STR PROC NEAR     ;AXDE ADRESI OLAN SONUNDA 0 OLAN DIZGIYI EKRANA YAZAR
+PUT_STR PROC NEAR     ;AXDE ADRESI OLAN SONUNDA 0 OLAN DIZGIYI EKRANA YAZAR (Prints the string with 0 at its end which has its address in AX register)
     PUSH BX
     MOV BX,AX
     MOV AL, BYTE PTR[BX]
