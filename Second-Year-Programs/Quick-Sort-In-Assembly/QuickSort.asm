@@ -5,21 +5,21 @@ data SEGMENT PARA 'veri'
     deg db 'Dizinin elemanlarini giriniz.',0; String means "Enter the elements of the array", deg is the initials of that string
     kbc db 'Kod basari ile calistirildi.',0; String means "Code ran without errors", kbc is the initials of that string
     dyb db 'Siralamadan sonra diziniz:',0; String means "Your string after sorting:"
-    dizi db 100 dup(?)
-    n db ?       
+    dizi db 100 dup(?); Defining the array
+    n db ? ;Defining the size of array
     CR EQU 13
     LF EQU 10
     HATA db 'YANLIS VERI GIRISI!!!',0
 data ends
 
 stack SEGMENT PARA STACK 'yigin'
-    dw   128  dup(0)
+    dw   128  dup(0) ;Defining the size of the stack
 stack ends
 
 code SEGMENT PARA 'kod'
     ASSUME SS:stack, DS:data, CS:code
-ANA PROC FAR
-    PUSH DS
+ANA PROC FAR ; "ANA" means "MAIN"
+    PUSH DS;Storing the necessary information and setting up the enviroment
     XOR AX,AX
     PUSH AX
     MOV AX,data
@@ -41,11 +41,11 @@ ANA PROC FAR
     CALL NEWLINE
     XOR AX,AX
     CALL GETN   
-    CMP AX,128
+    CMP AX,128; If size of AX is more than 8 bits, we jump to the error (If control)
     JG HATAVAR
     CMP AX,-127
     JL HATAVAR
-    MOV dizi[SI],AL
+    MOV dizi[SI],AL;If there is no error, we continue the code as usual (Else branch of the If statement)
     INC SI
     CMP SI,CX
     JNE L1
@@ -72,7 +72,7 @@ HATAYOK:
 
 
 
-;DIZI YAZDIRMA ISLEMI
+;DIZI YAZDIRMA ISLEMI (Printing the array)
     XOR SI,SI 
     PUSH CX
     XOR CX,CX
@@ -86,9 +86,9 @@ J3: XOR AX,AX
     CALL NEWLINE
     MOV AL,dizi[SI]
     CMP AL,127
-    JB ND        ;NEGATIF OLUP OLMADIGINI KONTROL ETME
+    JB ND        ;NEGATIF OLUP OLMADIGINI KONTROL ETME (Checking if the number is negative or not)
     PUSH AX
-    MOV AL, '-'
+    MOV AL, '-' ;If the number is negative we put '-' symbol, find the absolute value of that number and print both
     CALL PUTC
     POP AX
     NEG AX 
