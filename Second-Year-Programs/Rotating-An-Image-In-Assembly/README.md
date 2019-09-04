@@ -87,3 +87,41 @@ Original        Transpose       Rotated to left
 [3, 1, 8]  ==>  [4, 1, 7]  ==>  [4, 1, 7] 
 [2, 7, 9]       [5, 8, 9]       [1, 3, 2]
 ```
+
+Similar to rotating right, now Nth item in every column exchanged indexes with 1st item in that column.
+
+Pseudo code (After transpose);
+
+```
+for(i=0;i<n/2;i++)
+{
+  for(j=0;j<n;j++)
+  {
+    tmp=a[i*n+j]
+    a[i*n+j]=a[n*(n-i-1)+j]
+    a[n*(n-i-1)+j]=tmp
+  }
+}
+```
+
+
+We can rotate a matrix to the left or right, but there is a little problem, arrays in assembly language is one dimensional, so we cannot use a matrix (Atleast, directly), so what we need to do is, turning a matrix into an array, this process is simple.
+
+An matrix with NxN size would look like this;
+
+```
+[1, 2, 3, ..., n]
+[n+1, n+2, ..., 2n]
+.
+.
+.
+[n^2-n+1, n^2-n, ..., n^2]
+```
+
+We can transform this matrix into an one dimensional array;
+
+```
+[1, 2, 3, ..., n^2]
+```
+
+One we figure out how we reach Rows and Columns using only one index, we're good to go.
