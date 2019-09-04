@@ -47,7 +47,7 @@ After we get the transpose of the matrix, we have to turn it left, what we need 
 Turning a matrix without finding the transpose of that matrix seems too hard, finding the index change is harder. Let's see what will it look like when we get the transpose
 
 ```
-Original        Transpose         Rotated Left
+Original        Transpose         Rotated to Left
 [1, 4, 5]       [1, 3, 2]         [2, 3, 1]
 [3, 1, 8]  ==>  [4, 1, 7]   ==>   [7, 1, 4]
 [2, 7, 9]       [5, 8, 9]         [9, 8, 5]
@@ -67,4 +67,23 @@ for(i=0;i<n;i++)
     a[(i+1)*n-j-1]=tmp
   }
 }
+```
+
+#### Rotating Left
+
+Rotating left is nearly the same with rotating right, what we need to achieve is;
+
+```
+[1, 4, 5]       [5, 8, 9]
+[3, 1, 8]  ==>  [4, 1, 7]
+[2, 7, 9]       [1, 3, 2]
+```
+
+Again, it looks complex without transpose, lets see what we really need to do;
+
+```
+Original        Transpose       Rotated to left
+[1, 4, 5]       [1, 3, 2]       [5, 8, 9]
+[3, 1, 8]  ==>  [4, 1, 7]  ==>  [4, 1, 7] 
+[2, 7, 9]       [5, 8, 9]       [1, 3, 2]
 ```
