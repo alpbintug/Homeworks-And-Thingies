@@ -40,7 +40,7 @@ After we get the transpose of the matrix, we have to turn it left, what we need 
 
 ```
 [1, 4, 5]       [2, 3, 1]
-[3, 1, 8]  ==>  [4, 1, 4]
+[3, 1, 8]  ==>  [7, 1, 4]
 [2, 7, 9]       [9, 8, 5]
 ```
 
