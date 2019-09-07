@@ -22,6 +22,41 @@ What happened here is; Rows and Columns changed. 1st Column became the 1st raw e
 
 Both rotating to right or left functions require Transpose.
 
+
+We can rotate a matrix to the left or right, but there is a little problem, arrays in assembly language is one dimensional, so we cannot use a matrix (Atleast, directly), so what we need to do is, turning a matrix into an array, this process is simple.
+
+An matrix with NxN size would look like this;
+
+```
+[1, 2, 3, ..., n]
+[n+1, n+2, ..., 2n]
+.
+.
+.
+[n^2-n+1, n^2-n, ..., n^2]
+```
+
+We can transform this matrix into an one dimensional array;
+
+```
+[1, 2, 3, ..., n^2]
+```
+
+When we convert our matrix into a one dimensional array we see a pattern like this;
+
+```
+[1][1], [1][2], [1][3], ..., [1][n]                     [1], [2], [3], ..., [n]
+            .                                                     .
+            .                               ===>                  .
+            .                                                     .
+[n][1], [n][2], [n][3], ..., [n][n]                     [n^2-n+1], [n^2-n+2],...,[n^2]
+
+```
+
+The translation here is;
+```
+array[(raw index) * (number of columns) + (column index)] = matrix[raw index][column index]
+```
 Pseudo code;
 
 ```
@@ -105,23 +140,5 @@ for(i=0;i<n/2;i++)
 ```
 
 
-We can rotate a matrix to the left or right, but there is a little problem, arrays in assembly language is one dimensional, so we cannot use a matrix (Atleast, directly), so what we need to do is, turning a matrix into an array, this process is simple.
 
-An matrix with NxN size would look like this;
 
-```
-[1, 2, 3, ..., n]
-[n+1, n+2, ..., 2n]
-.
-.
-.
-[n^2-n+1, n^2-n, ..., n^2]
-```
-
-We can transform this matrix into an one dimensional array;
-
-```
-[1, 2, 3, ..., n^2]
-```
-
-One we figure out how we reach Rows and Columns using only one index, we're good to go.
