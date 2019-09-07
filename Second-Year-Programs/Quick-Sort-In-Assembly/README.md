@@ -14,3 +14,8 @@ Select a pivot: 11
 6 < 11, it will stay on the left
 11 = 11, no changes
 -3 < 11, it will go to the left, new array: 6, -3, 11, 5, 8, 18, 1
+5 < 11, it will go to the left, new array: 6, -3, 5, 11, 8, 18, 1
+8 < 11, it will go to the left, new array: 6, -3, 5, 8, 11, 18, 1
+18 > 11, it will go to the right, new array: 6, -3, 5, 8, 11, 1, 18
+1 < 11, it will go to the left, new array: 6, -3, 5, 8, 1, 11, 18, "11" found it's place in the array, we have to sort left and right side using same steps, I won't be covering it here, It will take too many steps.
+```
