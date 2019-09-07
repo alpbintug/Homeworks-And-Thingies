@@ -19,3 +19,33 @@ Select a pivot: 11
 18 > 11, it will go to the right, new array: 6, -3, 5, 8, 11, 1, 18
 1 < 11, it will go to the left, new array: 6, -3, 5, 8, 1, 11, 18, "11" found it's place in the array, we have to sort left and right side using same steps, I won't be covering it here, It will take too many steps.
 ```
+#### C Code
+
+void quicksort(int *number,int first,int last)
+{
+  int i, j, pivot, temp;
+  if(first<last)
+  {
+    pivot=first;
+    i=first;
+    j=last;
+    while(i<j)
+    {
+      while(number[i]<=number[pivot]&&i<last)
+      i++;
+      while(number[j]>number[pivot])
+      j--;
+      if(i<j)
+      {
+        temp=number[i];
+        number[i]=number[j];
+        number[j]=temp;
+      }
+    }
+    temp=number[pivot];
+    number[pivot]=number[j];
+    number[j]=temp;
+    quicksort(number,first,j-1);
+    quicksort(number,j+1,last);
+  }
+}
