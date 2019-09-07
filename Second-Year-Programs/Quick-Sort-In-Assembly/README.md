@@ -21,6 +21,7 @@ Select a pivot: 11
 ```
 #### C Code
 
+```
 void quicksort(int *number,int first,int last)
 {
   int i, j, pivot, temp;
@@ -49,3 +50,4 @@ void quicksort(int *number,int first,int last)
     quicksort(number,j+1,last);
   }
 }
+```
