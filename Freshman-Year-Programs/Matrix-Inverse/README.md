@@ -1,5 +1,5 @@
 ## Matrix Inverse
 
-I will add the comment lines later on. I have to focus on my Internship for three more weeks then I can start fixing my codes here.
+To understand how to get the inverse of a matrix visit; [link 1](https://www.mathsisfun.com/algebra/matrix-inverse.html), [link2](http://mathworld.wolfram.com/MatrixInverse.html)
 
 If you get outputs with IND00 that means your matrix cannot be inverted.
