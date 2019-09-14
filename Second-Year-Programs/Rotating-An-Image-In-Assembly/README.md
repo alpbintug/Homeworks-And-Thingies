@@ -138,7 +138,9 @@ for(i=0;i<n/2;i++)
   }
 }
 ```
+After doing those operations, we return our newly manipulated array, the array contains the information about the rotated black and white image.
 
+If you have any questions or I did any mistakes, please contact me.
 
 
 
