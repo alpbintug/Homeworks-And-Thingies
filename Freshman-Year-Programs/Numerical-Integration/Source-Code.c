@@ -11,33 +11,32 @@ double fonk(float x,int i,int j,float a[]){
 
 int main(){
     float dx,x1,x2,area;
-    int i,j;
+    int power,j;
     float a[MAX];
-    printf("fonksiyonun derecesini giriniz ");
-    scanf("%d",&i);
-    for (j=0; j<i+1; j++){
-        printf("%d. dereceden terimin katsayisini giriniz", j);
+    printf("Enter the Highest power in your function: ");
+    scanf("%d",&power);
+    for (j=0; j<power+1; j++){
+        printf("Enter the element with power %d: ", j);
         scanf("%f",&a[j]);
     }
     printf("Fonksiyonunuz: ");
-    for (j=0; j<i+1; j++){
+    for (j=0; j<power+1; j++){
     printf("+(%f*x^%d)",a[j],j);
 }
 
-    printf("\nbaslangic degerini giriniz ");
+    printf("\nEnter X1 ");
     scanf("%f",&x1);
-    printf("\nbitis degerini giriniz");
+    printf("\nEnter X2 ");
     scanf("%f",&x2);
-    printf("\ndegisim miktarini giriniz ");
+    printf("\nEnter the change amount ");
     scanf("%f",&dx);
     area=0;
     while(x1<x2){
-    area+=dx*(fonk(x1,i,j,a)+fonk(x1+dx,i,j,a))/2;
+    area+=dx*(fonk(x1,power,j,a)+fonk(x1+dx,power,j,a))/2;
     x1+=dx;
 }
 
     printf("\nArea under your function: %f\n", area);
-    system("PAUSE");
     }
 
 
