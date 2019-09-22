@@ -28,7 +28,7 @@ int main(){
     scanf("%f",&x1);
     printf("\nEnter X2 ");
     scanf("%f",&x2);
-    printf("\nEnter the change amount ");
+    printf("\nEnter the step size: ");
     scanf("%f",&dx);
     area=0;
     while(x1<x2){
