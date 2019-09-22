@@ -10,7 +10,7 @@ double fonk(float x,int i,int j,float a[]){
 }
 
 int main(){
-    float dx,x1,x2,alan;
+    float dx,x1,x2,area;
     int i,j;
     float a[MAX];
     printf("fonksiyonun derecesini giriniz ");
@@ -30,13 +30,13 @@ int main(){
     scanf("%f",&x2);
     printf("\ndegisim miktarini giriniz ");
     scanf("%f",&dx);
-    alan=0;
+    area=0;
     while(x1<x2){
-    alan+=dx*(fonk(x1,i,j,a)+fonk(x1+dx,i,j,a))/2;
+    area+=dx*(fonk(x1,i,j,a)+fonk(x1+dx,i,j,a))/2;
     x1+=dx;
 }
 
-    printf("\nfonksiyonun integrali %f\n", alan);
+    printf("\nArea under your function: %f\n", area);
     system("PAUSE");
     }
 
